@@ -2,51 +2,51 @@ const Game = require('../models/Game')
 
 class GameController {
 
-    static async createGame(req, res) {
-        const {
-            fase,
-            nome_equipe_01,
-            nome_equipe_02,
-            gols_equipe_01,
-            gols_equipe_02,
-            grupo,
-            partida,
-            escudo_equipe_01,
-            escudo_equipe_02,
-            gols_penaltis_equipe_01,
-            gols_penaltis_equipe_02,
-            local_partida,
-            data_partida,
-            status_partida,
-            status_penaltis,
-            vs_ou_x
-        } = req.body
+    // static async createGame(req, res) {
+    //     const {
+    //         fase,
+    //         nome_equipe_01,
+    //         nome_equipe_02,
+    //         gols_equipe_01,
+    //         gols_equipe_02,
+    //         grupo,
+    //         partida,
+    //         escudo_equipe_01,
+    //         escudo_equipe_02,
+    //         gols_penaltis_equipe_01,
+    //         gols_penaltis_equipe_02,
+    //         local_partida,
+    //         data_partida,
+    //         status_partida,
+    //         status_penaltis,
+    //         vs_ou_x
+    //     } = req.body
 
-        try {
-            const newGame = await Game.create({
-                fase,
-                nome_equipe_01,
-                nome_equipe_02,
-                gols_equipe_01,
-                gols_equipe_02,
-                grupo,
-                partida,
-                escudo_equipe_01,
-                escudo_equipe_02,
-                gols_penaltis_equipe_01,
-                gols_penaltis_equipe_02,
-                local_partida,
-                data_partida,
-                status_partida,
-                status_penaltis,
-                vs_ou_x
-            })
+    //     try {
+    //         const newGame = await Game.create({
+    //             fase,
+    //             nome_equipe_01,
+    //             nome_equipe_02,
+    //             gols_equipe_01,
+    //             gols_equipe_02,
+    //             grupo,
+    //             partida,
+    //             escudo_equipe_01,
+    //             escudo_equipe_02,
+    //             gols_penaltis_equipe_01,
+    //             gols_penaltis_equipe_02,
+    //             local_partida,
+    //             data_partida,
+    //             status_partida,
+    //             status_penaltis,
+    //             vs_ou_x
+    //         })
 
-            res.status(201).json({ game: newGame })
-        } catch (error) {
-            res.status(500).json({ message: error.message })
-        }
-    }
+    //         res.status(201).json({ game: newGame })
+    //     } catch (error) {
+    //         res.status(500).json({ message: error.message })
+    //     }
+    // }
 
     static async primeiraRodada(req, res) {
         try {
