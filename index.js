@@ -20,5 +20,5 @@ app.use('/api', GameRouter)
 app.use('/api', TableRouter)
 
 app.listen(port, () => {
-    console.log(`Servidor rodando na porta ${port}`)
+    console.log(`Servidor rodando na porta => ${port}`)
 })
