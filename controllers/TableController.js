@@ -64,6 +64,15 @@ class TableController {
         }
     }
 
+    static async tabelaGrupo03(req, res) {
+        try {
+            const tabelaGrupo03 = await Table.find({ grupo: 'GRUPO 03' }).sort('-pontos -vitorias -saldo_gols -gols_feitos gols_sofridos cartoes_vermelhos cartoes_amarelos')
+            res.status(200).json(tabelaGrupo03)
+        } catch (error) {
+            res.status(500).json({ message: error.message })
+        }
+    }
+
 }
 
 module.exports = TableController
