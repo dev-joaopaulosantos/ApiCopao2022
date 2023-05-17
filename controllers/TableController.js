@@ -2,49 +2,49 @@ const Table = require('../models/Table')
 
 class TableController {
 
-    static async createTable(req, res) {
-        const {
-            grupo,
-            equipe,
-            pontos,
-            jogos,
-            vitorias,
-            empates,
-            derrotas,
-            saldo_gols,
-            gols_feitos,
-            gols_sofridos,
-            cartoes_amarelos,
-            cartoes_vermelhos,
-            escudo
-        } = req.body
+    // static async createTable(req, res) {
+    //     const {
+    //         grupo,
+    //         equipe,
+    //         pontos,
+    //         jogos,
+    //         vitorias,
+    //         empates,
+    //         derrotas,
+    //         saldo_gols,
+    //         gols_feitos,
+    //         gols_sofridos,
+    //         cartoes_amarelos,
+    //         cartoes_vermelhos,
+    //         escudo
+    //     } = req.body
 
-        if (!grupo || !equipe || !escudo) {
-            return res.status(400).json({ message: "Dados incompletos!" })
-        }
+    //     if (!grupo || !equipe || !escudo) {
+    //         return res.status(400).json({ message: "Dados incompletos!" })
+    //     }
 
-        try {
-            const newTable = await Table.create({
-                grupo,
-                equipe,
-                pontos,
-                jogos,
-                vitorias,
-                empates,
-                derrotas,
-                saldo_gols,
-                gols_feitos,
-                gols_sofridos,
-                cartoes_amarelos,
-                cartoes_vermelhos,
-                escudo
-            })
+    //     try {
+    //         const newTable = await Table.create({
+    //             grupo,
+    //             equipe,
+    //             pontos,
+    //             jogos,
+    //             vitorias,
+    //             empates,
+    //             derrotas,
+    //             saldo_gols,
+    //             gols_feitos,
+    //             gols_sofridos,
+    //             cartoes_amarelos,
+    //             cartoes_vermelhos,
+    //             escudo
+    //         })
 
-            res.status(201).json({ table: newTable })
-        } catch (error) {
-            res.status(500).json({ message: error.message })
-        }
-    }
+    //         res.status(201).json({ table: newTable })
+    //     } catch (error) {
+    //         res.status(500).json({ message: error.message })
+    //     }
+    // }
 
     static async tabelaGrupo01(req, res) {
         try {
