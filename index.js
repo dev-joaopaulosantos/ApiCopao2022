@@ -16,10 +16,12 @@ app.get('/', (req, res) => {
 const GameRouter = require('./routes/GameRoutes')
 const TableRouter = require('./routes/TableRoutes')
 const TeamRouter = require('./routes/TeamRoutes')
+const InfoRouter = require('./routes/InfoRoutes')
 
 app.use('/api', GameRouter)
 app.use('/api', TableRouter)
 app.use('/api', TeamRouter)
+app.use('/api', InfoRouter)
 
 app.listen(port, () => {
     console.log(`Servidor rodando na porta => ${port}`)
